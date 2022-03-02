@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Davin Landry -Shear Haptics</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Davin Landry</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li><a href="generic.html">Resume</a></li>
+							<li><a href="elements.html">About Me</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/davinlandry/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/dlandry97" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Redlight Greenlight Game<br />
+									</h1>
+								</header>
+                                <span class="image fit"><img src="assets/RLGL/RLGLEric.gif" alt="" /></span>
+
+								<!-- Text stuff -->
+									<!-- <h2>Text</h2>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>.
+									Finally, this is a <a href="#">link</a>.</p> -->
+                                    <h2>Redlight Greenlight</h2>
+                                    <p>For this project I created the computer vision system and the interactive game mechanics for redlight greenlight. Redlight Greenlight is the kids game where a seeker player tries to catch the other players moving while they try to cross a field. When the seeker calls "greenlight", the seeker covers their eyes while the other players are able to move across the field to reach the other side. Once the seeker calls "redlight", they uncover their eyes and the other players must freeze in place to not get caught moving by the seeker. If a player is caught moving during the redlight phase, they are eliminated from the game by the seeker.</p>
+                                    
+
+                                    <h3>Game Mechanics</h3>
+                                    <p>To develop this game into a project, I chose to replace the role of the seeker with a robot. This robot would watch the players, call out the redlight/greenlight phases, eliminate players, and keep score with no assistance from humans. The players would start at a distance from the robot and try to get close to the robot without being eliminated. If they are caught moving during the wrong phase, they would lose one of three lives. The game would end when the players lose all lives or they reach the robot. </p>
+                                    
+                                    <h3>Computer Vision</h3>
+                                    <p>I used the python libraries OpenCV, ROS, and pyrealsense2 to create the image processing pipeline for tracking the players. I used color recognition to identify the contours of the players and track their movements. Movement detection was determined by a change in position of the centroid of the contoured area beyond a certain threshold. The player's distance from the goal was detected by utilizing the Intel Realsense D435i's depth perception camera. </p>
+                                    
+                                    
+                                    <span class="image fit"><img src="assets/RLGL/playertracking.png" alt="" /></span>
+
+                                    <h3>Integration</h3>
+                                    <p>To combine the computer vision and game algorithm together, I used the ROS python package. I made a node to manage the image pipeline and send the data to another node that manages the game mechanics and score. The game node would use state machines and timers to manage the game phases and data triggers to keep track of the score. There is an additional node to manage the sound ques to prevent process halting issues.
+                                    </p>
+
+                                    <h2>Video Presentation</h2>
+                                    <iframe width="720" height="480" src="assets/RLGL/presentation.mp4" title="Youtube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+
+                                    <h3>Player Elimination</h3>
+                                    <iframe width="560" height="315" src="assets/RLGL/elimination.mp4" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                    <h3>Full Game</h3>
+                                    <iframe width="560" height="315" src="assets/RLGL/Rolling.mp4" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    
+
+							
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>1234 Somewhere Road #87257<br />
+								Nashville, TN 00000-0000</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(000) 000-0000</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">info@untitled.tld</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
