@@ -52,12 +52,14 @@
 									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
 									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>.
 									Finally, this is a <a href="#">link</a>.</p> -->
-                                    <h2>Redlight Greenlight</h2>
-                                    <p>For this project I created the computer vision system and the interactive game mechanics for redlight greenlight. Redlight Greenlight is the kids game where a seeker player tries to catch the other players moving while they try to cross a field. When the seeker calls "greenlight", the seeker covers their eyes while the other players are able to move across the field to reach the other side. Once the seeker calls "redlight", they uncover their eyes and the other players must freeze in place to not get caught moving by the seeker. If a player is caught moving during the redlight phase, they are eliminated from the game by the seeker.</p>
+                                    <h2>overview</h2>
+
+                                    <p>For this project I created the computer vision system and the interactive game mechanics for redlight greenlight. To develop this game into a project, I chose to replace the role of the seeker with a robot. This robot would watch the players, call out the redlight/greenlight phases, eliminate players, and keep score with no assistance from humans.</p>
                                     
 
                                     <h3>Game Mechanics</h3>
-                                    <p>To develop this game into a project, I chose to replace the role of the seeker with a robot. This robot would watch the players, call out the redlight/greenlight phases, eliminate players, and keep score with no assistance from humans. The players would start at a distance from the robot and try to get close to the robot without being eliminated. If they are caught moving during the wrong phase, they would lose one of three lives. The game would end when the players lose all lives or they reach the robot. </p>
+                                    <p> Redlight Greenlight is the kids game where a seeker player tries to catch the other players moving while they try to cross a field. When the seeker calls "greenlight", the seeker covers their eyes while the other players are able to move across the field to reach the other side. Once the seeker calls "redlight", they uncover their eyes and the other players must freeze in place to not get caught moving by the seeker. If a player is caught moving during the redlight phase, they are eliminated from the game by the seeker.  </p>
+									<p>In my project, the players would start at a distance from the robot and try to get close to the robot without being eliminated. If they are caught moving during the wrong phase, they would lose one of three lives. The game would end when the players lose all lives or they reach the robot.</p>
                                     
                                     <h3>Computer Vision</h3>
                                     <p>I used the python libraries OpenCV, ROS, and pyrealsense2 to create the image processing pipeline for tracking the players. I used color recognition to identify the contours of the players and track their movements. Movement detection was determined by a change in position of the centroid of the contoured area beyond a certain threshold. The player's distance from the goal was detected by utilizing the Intel Realsense D435i's depth perception camera. </p>
@@ -89,7 +91,7 @@
 				<footer id="footer">
 					<section>
 						<header id="header">
-							<a href="index.html" class="logo">Github Link</a>
+							<a href="https://github.com/dlandry97/Redlight_Greenlight" class="logo">Github Link</a>
 						</header>
 					</section>
 				</footer>
