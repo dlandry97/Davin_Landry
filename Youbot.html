@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Davin Landry -Youbot</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Davin Landry</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li><a href="Resume.html">Resume</a></li>
+							<li><a href="About.html">About Me</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/davinlandry/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/dlandry97" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Youbot Manipulation<br />
+									</h1>
+								</header>
+                                <span class="image fit"><img src="assets/Youbot/Pickandplace.gif" alt="" /></span>
+
+								<!-- Text stuff -->
+									
+									<h2>Overview</h2>
+                                   <p>The goal for this project is to create a code that outputs configuration arrays that are used to manipulate the kuka youbot robot in coppeliasim.
+                                    The robot trajectory is to complete a pick and place task on a cube. To do this, the project has been split into 3 parts.</p>
+                                    <h2>Milestone 1</h2>
+                                    <p>Milestone 1 is to create a function (NextState) that simulates the kinematics of the youbot, incorporating the dynamics of the 5 joint arm and the 4 mecanum wheels. </p>
+
+                                    <h2>Milestone 2</h2>
+                                 
+                                    <!-- <span class="image fit"><img src="assets/BBall/bballbotCAD.png" alt="" /></span> -->
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6"><span class="image fit"><img src="assets/Youbot/Milestone2.gif" alt="" /></span></div>
+											<div class="col-6"><span class="image fit"><p>Milestone 2 is to make a function (TrajectoryGenerator) that creates a desired trajectory for the end effector that follows the path to pickup and place the cube from one point to another.</p></span></div>
+											<!-- <div class="col-4"><span class="image fit"><img src="assets/ShearHaptics/prototype3.gif" alt="" /></span></div> -->
+										</div>
+									</div>
+<!-- 
+                                    <p>Milestone 2 is to make a function (TrajectoryGenerator) that creates a desired trajectory for the end effector that follows the path to pickup and place the cube from one point to another.</p>
+                                    <span class="image fit"><img src="assets/Youbot/Milestone2.gif" alt="" /> -->
+
+                                    <h2>Milestone 3</h2>
+                                    <p>Milestone 3 is to create a feedforawrd control function (FeedbackControl) that uses kinematic task-space feedforward and feedback control law. This outputs the joint speeds for the robot to follow and keep up with the end effectors trajectory.</p>
+                                    
+                                    <p>The final code for the project incorporates all of these milestone elements to simulate the robots kinematics to complete the pick and place task.</p>
+                                    
+                                    <h2>Code</h2>
+                                    <p>It uses the end effector trajectory from milestone 2 to perform a feedforward trajectory planning for the configuration of the whole youbot robot.
+                                        By manipulating the initial configuration and the Kp and Ki values of the controller the simulated robot will have different results when completing the task.
+                                        The code creates a csv file of the configuration array to perform the trajectory in coppelia sim. </p>
+
+                                    <h2>Deliverables and Results</h2>
+
+                                    <p>There are three senarios that need to be demonstrated and analysed. The task is to tune the proportional and integral controller to sample different dynamics when the end effector is initially configured in a position that is offset from the starting position of the desired end effector trajectory specified from milestone 2. </p>
+                                    
+                                    <p>All three senarios will have directories that will have the configuration csv file, a graph of the Xerror values through the trajectory, a readme file to describe the configuration  variable values used, and a video of the coppelia simulation.</p>
+                                    
+
+                                    <h2>Best</h2>
+                                    <p></p>
+                                    <!-- <span class="image fit"><img src="assets/BBall/bballbotCAD.png" alt="" /></span> -->
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6"><span class="image fit"><img src="assets/Youbot/best.gif" alt="" /></span></div>
+											<div class="col-6"><span class="image fit"><p>The Best senario is when the proportional and integral controllers are tuned in a way that eliminates error quickly and without overshoot to complete the simulated pick and place task. The error values should converge to zero by the time the robot completes the first trajectory segment.</p></span></div>
+											<!-- <div class="col-4"><span class="image fit"><img src="assets/ShearHaptics/prototype3.gif" alt="" /></span></div> -->
+										</div>
+									</div>
+
+                                    <h2>Overshoot</h2>
+                                    <p></p>
+                                    <!-- <span class="image fit"><img src="assets/BBall/bballbotCAD.png" alt="" /></span> -->
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6"><span class="image fit"><img src="assets/Youbot/Overshoot.gif" alt="" /></span></div>
+											<div class="col-6"><span class="image fit"><p>The overshoot senario is when the controller and initial configuration is tuned to demonstrate an overshoot result of the Xerror values. The error values should still converge and the robot should still be able to complete the pick and place task.</p></span></div>
+											<!-- <div class="col-4"><span class="image fit"><img src="assets/ShearHaptics/prototype3.gif" alt="" /></span></div> -->
+										</div>
+									</div>
+
+                                    <h2>New Task</h2>
+                                    <p></p>
+                                    <!-- <span class="image fit"><img src="assets/BBall/bballbotCAD.png" alt="" /></span> -->
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6"><span class="image fit"><img src="assets/Youbot/New_Task.gif" alt="" /></span></div>
+											<div class="col-6"><span class="image fit"><p>The new task senario is to demonstrate the pick and place task with a new set of initial and final positions of the cube. The controllers for this senario can be tuned to make the robot complete the task effectivly. </p></span></div>
+											<!-- <div class="col-4"><span class="image fit"><img src="assets/ShearHaptics/prototype3.gif" alt="" /></span></div> -->
+										</div>
+									</div>
+
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<header id="header">
+							<a href="https://github.com/dlandry97/Youbot_sim" class="logo">View on Github</a>
+						</header>
+					</section>
+				</footer>
+
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
