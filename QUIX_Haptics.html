@@ -59,31 +59,35 @@
 
                                     <p>The haptic system relays important information in an intuitive and easily perceptable manner with vibration motors mounted on the users arms. The haptic system is designed to help percieve the movements of the legs throughout the gait cycle. Additionally, the haptic system enables center of pressure feedback, enabling better balance perception and correction while standing. The primary goal for the haptic feedback is to restore to the pilot awareness of their legs, where they are, what they are doing etc. This haptic awareness would decrease compensatory behaviors normally present in non-haptic enabled exosuits. Compensatory behaviors such as looking down at your legs while walking and or rhythmically timing the heel-strike impacts while walking can be eliminated with this haptic awareness. A good milestone for the effectiveness of the haptic system would be for Mark or any other exo pilot to walk in the exosuit comfortably with their eyes closed. </p>
 									
-                                    <!-- <h3>Prototypes</h3>
+                                   
                                     <div class="box alt">
-										<div class="row gtr-50 gtr-uniform">
-											<div class="col-4"><span class="image fit"><img src="assets/ShearHaptics/prototype1.gif" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="assets/ShearHaptics/prototype2upright.gif" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="assets/ShearHaptics/prototype3.gif" alt="" /></span></div>
-										</div>
-									</div> -->
+                                        <div class="row gtr-50 gtr-uniform">
+                                            <div class="col-6"><span class="image fit"><img src="assets/Quix/Mark_prototype2.jpg" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/Quix/quix walk.gif" alt="" /></span></div>
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
+                                        </div>
+                                    </div>
 
 
                                     <h2>Walking overview</h2>
                                     <p>Due to the currently limited nature of QUIX's sensing and processing, the amount of available information to perceive is limited. The vibration sleeves are primarily designed to help Mark (or any exo pilot) perceive the state/position of the legs during a pre-programmed gait cycle. To utilize the cyclical nature and the distinct states of a walking gait cycle, the haptic motors are divided among landmarks of the gait, specifically the toe-off, swing, and heel-strike. 
                                     </p>
+                                    <span class="image fit"><img src="assets/Quix/gait_pattern.png" alt="" />
                                     <!-- <span class="image fit"><img src="assets/Quix/haptic_pattern.png" alt="" /> -->
-                                    <div class="box alt">
+                                        <div class="box alt">
                                         <div class="row gtr-50 gtr-uniform">
+                                            <div class="col-6"><p>
+                                                After discussion and feedback from Mark, having distinct perception/indication of the specified gait landmarks is significant for improving the conjunction of perception and reaction. The landmarks were specifically selected because they are high activity events. Toe-off and heel-strike have high impact on the inertia and movement of the EXO, therefore requiring much more preparation and reaction from the pilot to maintain control and balance of the EXO. Using the haptic feedback to perceive and anticipate these landmarks would greatly increase the pilots ability to adapt and control walking stability without requiring visual confirmation of what their legs are doing. 
+                                            </p></div>
                                             <div class="col-6"><span class="image fit"><img src="assets/Quix/haptic_pattern.png" alt="" /></span></div>
-                                            <div class="col-6"><span class="image fit"><img src="assets/Quix/gait_pattern.png" alt="" /></span></div>
                                             <!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
                                             <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
                                         </div>
                                     </div>
-                                    <p>
+                                    <!-- <p>
                                         After discussion and feedback from Mark, having distinct perception/indication of the specified gait landmarks is significant for improving the conjunction of perception and reaction. The landmarks were specifically selected because they are high activity events. Toe-off and heel-strike have high impact on the inertia and movement of the EXO, therefore requiring much more preparation and reaction from the pilot to maintain control and balance of the EXO. Using the haptic feedback to perceive and anticipate these landmarks would greatly increase the pilots ability to adapt and control walking stability without requiring visual confirmation of what their legs are doing. 
-                                    </p>
+                                    </p> -->
                                     <!-- <span class="image fit"><img src="assets/Quix/gait_pattern.png" alt="" /> -->
                                     <p>
                                         Per request of Mark, the leg swing action is paired with a motor pattern that is designed to help time and anticipate Heel-strike. This is done with a ramping oscillation pattern of the arm motors that, with little training, would help couple the haptic perception with the swing and strike of the foot. 
@@ -108,17 +112,49 @@
 									<h2>Integration</h2>
 									<p>
                                         The Arduino UNO communicates with QUIX's NUC robot computer via serial coms. The control for the coin vibration motors is quite simple because the motors only need around 3.3V~5V of DC to drive. Therefore the logic for driving the motors comes down to simple classification logic. The arduino communicates with the NUC through serial communication to receive Bytes of information at a time. Arduino has less reliability when communicating in packets of more than 1 byte, therefore the computation and classification of the data is done on the NUC. The NUC then sends an INT byte to the arduino that triggers a predefined action out of a list. The code in the Arduino is a simple switch case style list of actions that receives an INT and runs the action paired with that INT. 
-
+                                    </p>
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            <div class="col-6"><span class="image fit"><img src="assets/Quix/motor_piece.jpg" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/Quix/haptics board.png" alt="" /></span></div>
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
+                                        </div>
+                                    </div>
+                                    <p>
                                         The code on the NUC involves a walking controller and state machine developed by the IHMC exo-team coded in Java. I integrated my own java classes to extract the useful information from the state machine, classify the data to a desired output, and send the desired action to the arduino.
                                     </p>
 
                                     <h2>testing</h2>
 
-                                    <p>
-                                        The haptic sleeves were tested on a virtual QUIX exo using IHMC's Simulation Construction Set software (SCS). SCS simulates the exosuit in a virual environemnt and demonstrates the haptic feedback based on the actions commanded in the simulation. This testing method was used to help train Mark's haptic perception to match what the exo does, as well as allowes timely, critical feedback on preferences for the perception patterns.
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            <div class="col-6"><p>
+                                                The haptic sleeves were tested on a virtual QUIX exo using IHMC's Simulation Construction Set software (SCS). SCS simulates the exosuit in a virual environemnt and demonstrates the haptic feedback based on the actions commanded in the simulation. This testing method was used to help train Mark's haptic perception to match what the exo does, as well as allowes timely, critical feedback on preferences for the perception patterns.
+                                            </p></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/Quix/quix_scs.png" alt="" /></span></div>
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
+                                        </div>
+                                    </div>
 
-                                        Testing for the center of pressure (COP) haptic feedback is done using a force plate testing rig. A Bertec force plate sensor was used to detect ground reaction forces and relay that data to the NUC through ethercat communication. The haptic sleeves were donned seperatly from the exo to confirm the speed and accuracy of the feedback while the user stood on the forceplate.
+                                    
+
+
+
+                                    <p>
+                                        Testing for the center of pressure (COP) haptic feedback is done using a force plate testing rig. A Bertec force plate sensor was used to detect ground reaction forces and relay that data to the NUC through ethercat communication. The haptic sleeves were donned seperatly from the exo to confirm the responsiveness and accuracy of the feedback while the user stood on the forceplate.
                                     </p>
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            <div class="col-6"><span class="image fit"><img src="assets/Quix/cop_test1.jpg" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/Quix/cop_test3.jpg" alt="" /></span></div>
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
+                                        </div>
+                                    </div>
+
+                                    <p>The Center of Pressure haptic feedback feature would be used to enable exo pilots to have more accurate awareness of their balance state and train them to better control and recover from unstable standing positions.</p>
 
 									
 
