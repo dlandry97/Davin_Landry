@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Davin Landry -RoboToe</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Davin Landry</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li><a href="https://drive.google.com/file/d/1gZ4xoXLDyC8LU_kWPDbZhLLVhZ4pC3HY/view?usp=sharing">Resume</a></li>
+							<li><a href="About.html">About Me</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/davinlandry/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/dlandry97" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Robo-Toe<br />
+									</h1>
+								</header>
+                                <span class="image fit"><img src="assets/Robotoe/op3_laserfx2.jpg" alt="" /></span>
+
+								<!-- Text stuff -->
+									<!-- <h2>Text</h2>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>.
+									Finally, this is a <a href="#">link</a>.</p> -->
+                                    <p>This project started as a literature review of robotic feet for bipedal humanoid robots. There was also extensive research in what type of sensor would be ideal for robot feet considering COP and ground sensing. The findings of the literature review and sensor research were used to design many novel prototype feet that were considered for the NADIA robot. This led to the specification, commissioning, and testing of a 6-axis force/torque sensor. The testing and implementation of the foot sensor continued throughout my time at the IHMC.</p>
+                                    
+                                    <h2>Literature Review</h2>
+
+                                    <p>My literature review was focused on dynamic robot feet both actuated and passive with the goal to increase efficiency and ability for robotic bipedal locomotion. I covered humanoid robots from all over the world including Atlas, ASIMO, HRP, LOLA, Sarcos, TORO, Cassie, Digit, WABIAN, and many more. 
+                                        My studies showed that having an additional toe linkage would result in a more human-like walking gait and more efficient force transfer throughout locomotion. With toes, the robot would perform a more natural toe-off and heel strike action that improved efficiency by reducing the maximum torque required for forward movement. The toe-off/heel-strike gait also improves efficiency by reducing the lateral movement range of the torso during locomotion, leading to more consistent force and power requirements. 
+                                        The addition of toes would also create a more efficient "roll-over shape" which would improve the efficiency for dynamic walking. </p>
+
+                                    <h2>Sensor</h2>
+                                    <p>The robotic foot sensors need to be able to sense the center of pressure from the foot to the ground. To do this, you need to be able to sense 3 axes of force; x-moment, y-moment, z-axial. I decided to move forward with a 6-axis force/torque sensor that measures all moment torques and all axial forces.
+
+                                        I conducted a variety of tests on the 6-axis F/T sensor, including force measurement resolution, historesis testing, thermal drift testing, and long term measurement drift. </p>
+                                    
+                                    
+                                    <h3>Photos of load testing setup</h3>
+
+                                    <span class="image fit"><img src="assets/IHMC/test_setup.jpg" alt="" /></span>
+
+                                    <p>My test results led to the discovery of inaccurate measurements due to sensor housing deformation between the mounting holes. To mitigate this, I designed and conducted FEA on adapter components that would attach to the deforming surfaces to translate the forces through a structure that would spread the forces evenly between each mounting holes, eliminating housing deformation. I tested different designs in Solidworks an attempt to reduce added height and weight. </p>
+                                    
+                                    <div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA1.png" alt="" /></span></div>
+											<div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA2.png" alt="" /></span></div>
+											<div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div>
+										</div>
+									</div>
+
+                                    <h2>Design and Prototyping</h2>
+
+                                    <p>My initial foot designs included toe linkages that would bring the added benefits to the robot gait. I made these designs with the current sensor structure in mind and was able to print plastic prototypes to demonstrate the movement of the toes. </p>
+                                    
+                                    <h3>CAD and printed model of foot with toes</h3>
+                                    <!-- <span class="image fit"><img src="assets/IHMC/cad_foot.png" alt="" /></span> -->
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6"><span class="image fit"><img src="assets/IHMC/cad_foot.png" alt="" /></span></div>
+											<div class="col-6"><span class="image fit"><img src="assets/IHMC/plastic_foot.jpg" alt="" /></span></div>
+											<!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
+										</div>
+									</div>
+                                    
+
+                                    <!-- <span class="image fit"><img src="assets/IHMC/plastic_foot.jpg" alt="" /></span> -->
+
+                                    <p>With the limited literature and implementation of toes on robots, the final decision was to not add toes to the NADIA robot foot. Adding the toe linkage would increase the degree of freedom of the robot and add a large amount of complexity to the control system. The developed robot balance and locomotion control system was also not designed to perform with a natural human gait and would need a large amount of redevelopment to implement. The toes would also require strong actuators, which would be large and heavy, increasing the inertial load to swing the leg forward. At the current development of the robot, adding toes would add much more complexity that outweighed the benefits of a human-like toe-off/heel-strike gait.</p>
+
+                                    <h3>Photo of implemented F/T sensor on flat foot</h3>
+
+
+                                    <span class="image fit"><img src="assets/IHMC/foot_off.jpg" alt="" /></span>
+
+                                    <!-- <h3>Photo of the composite foot pad and mold</h3>
+
+                                    <span class="image fit"><img src="assets/IHMC/20210630_Nadia_Parts_LowRes_17.jpg" alt="" /></span> -->
+
+                                    <h2>Implementation</h2>
+                                    <iframe width="1080" height="720" src="assets/IHMC/media11.mp4" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+                                    <h3>Display of large range of motion of the Nadia legs</h3>
+                                    <span class="image fit"><img src="assets/IHMC/20210630_Nadia_01_BendKick_Small.png" alt="" /></span>
+
+                                    <h2>Other IHMC NADIA Projects</h2>
+
+                                    <h3>Carbon Fiber Process</h3>
+
+                                    <p>I helped develop a carbon fiber laying process that solved issues presented from previous carbon fiber laying processes. The previous process of creating the shell laid the carbon fiber inside of an outer mold with an inflation system that compressed the layers from the inside. That process would create imperfections on the inside surface that needed constant sanding and grinding in order to not conflict with the components housed inside. </p>
+
+                                    <h3>Photo of the carbon fiber thigh with components inside and Inner Shell</h3>
+                                    <!-- <span class="image fit"><img src="assets/IHMC/20210630_Nadia_Parts_LowRes_06.jpg" alt="" /></span> -->
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-7"><span class="image fit"><img src="assets/IHMC/20210630_Nadia_Parts_LowRes_06.jpg" alt="" /></span></div>
+											<div class="col-5"><span class="image fit"><img src="assets/IHMC/20210630_Nadia_Parts_LowRes_11.jpg" alt="" /></span></div>
+											<!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
+										</div>
+									</div>
+                                    <p>Our new process involved creating a printable inner mold that would collapse inward for easy release and removal. The carbon fiber would be layered over the mold and vacuum sealed for curing. After the part is cured, the core mold would be collapsed and removed in pieces. This allowed us to easily fine tune the topology of the inner surface of the shell, reducing the amount of post processing needed. </p>
+                                    <!-- <h3>Photo of the inner surface of the finished thigh shell</h3> -->
+
+
+                                    <!-- <span class="image fit"><img src="assets/IHMC/20210630_Nadia_Parts_LowRes_11.jpg" alt="" /></span> -->
+
+                                    <h3>Photo of me after assembling leg</h3>
+                                    <span class="image fit"><img src="assets/IHMC/me_with_leg.jpg" alt="" /></span>
+
+                                    <h3>Group photo of the IHMC lab</h3>
+                                    <span class="image fit"><img src="assets/IHMC/ihmc_lab.png" alt="" /></span>                             
+
+
+							
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+               
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Davin Landry</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
