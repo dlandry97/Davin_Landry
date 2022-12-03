@@ -52,72 +52,200 @@
 									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
 									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>.
 									Finally, this is a <a href="#">link</a>.</p> -->
-                                    <p>This project is a continuation of the Robotic Feet project that I worked on at the IHMC in 2021. In this project, I test new feet designs on a smaller scale robot for cost efficenecy and controlability.</p>
+                                    <p>This project is a continuation of the Robotic Feet project that I worked on at the IHMC in 2021. In this project, I test new feet designs on a smaller-scale robot for cost efficiency and controllability.</p>
                                     
                                     <h2>Overview</h2>
 
-                                    <p> My hypothesis is that having an additional toe linkage would result in a more human-like walking gait and more efficient force transfer throughout locomotion. With toes, the robot would perform a more natural toe-off and heel strike action that improved efficiency by reducing the energy for forward movement. The toe-off/heel-strike gait also improves efficiency by reducing the lateral movement range of the torso during locomotion, leading to more consistent force and power requirements. 
-                                        The addition of toes would also create a more efficient "roll-over shape" which would improve the efficiency for dynamic walking. </p>
+                                    <p> I hypothesize that having an additional toe linkage would result in a more human-like walking gait and more efficient force transfer throughout locomotion. With toes, the robot would perform a more natural toe-off and heel-strike action, improving efficiency by reducing the energy for forward movement. The toe-off/heel-strike gait also improves efficiency by reducing the lateral movement range of the torso during locomotion, leading to more consistent force and power requirements. 
+                                        The addition of toes would also create a more efficient "roll-over-shape" which would improve the efficiency of dynamic walking. </p>
 
 									<h2>The Robot</h2>
-									<p>The Robotis OP3 robot used in this experiment is a development humanoid driven by 20 dynamixel electric servo motors. There are 6 motors in each leg, 3 motors in each arm, and 2 motors in the head. Although the major degrees of freedom are similar between the op3 robot and the humanoid form, the joint positions on the leg are not anthropamorphic as each linkage is a uniform length to fit each motor into the op3 robot. 
-										The robot's computer is an intel NUC that runs on linux mint and the robots operating system is ROS kinetic running several Robotis ROS packages. The Northwestern University Robotics lab owns the robot and asked me to update the OP3 operating system and packages to the current versions they use in the lab. 
-										This process involved updating the intel NUC OS to ubuntu 20.04 and the the ROS version from Kinetic (2016) to Noetic (2020). The new ROS version also required me to update the Robotis OP3 packages in order to use the robot. Robotis had discontinued development for the OP3 robot in 2016, so I forked each ros package that needed to be changed and made adjustments to the code to function with ROS Noetic. This involved making changes from python 2 to python 3 and opencv 3 to opencv 4.
-										I also needed to use an older version of orocos kinematics dynamics library so that the balance controller would run without issues. 
+									<span class="image fit"><img src="assets/Robotoe/op3_dimensions.png" alt="" /></span>
+									<p>The Robotis OP3 robot used in this experiment is a development-level humanoid driven by 20 dynamixel electric servo motors. There are 6 motors in each leg, 3 motors in each arm, and 2 motors in the head. Although the major degrees of freedom are similar between the op3 robot and the humanoid form, the joint positions on the leg are not anthropomorphic, as each linkage is a uniform length to fit each motor into the op3 robot. 
+										<br>The robot's computer is an intel NUC that runs on Linux Mint and the robot's operating system is ROS Kinetic, running several Robotis ROS packages. The Northwestern University Robotics lab owns the robot and asked me to update the OP3 operating system and packages to the current versions they use in the lab. 
+										This process involved updating the intel NUC OS to ubuntu 20.04 and the ROS version from Kinetic (2016) to Noetic (2020). The new ROS version also required me to update the Robotis OP3 packages in order to use the robot. Unfortunately, Robotis discontinued development for the OP3 robot in 2016, so I forked each ROS package that needed to be changed and made adjustments to the code to function with ROS Noetic. This involved making changes from python 2 to python 3 and OpenCV 3 to OpenCV 4.
+										There are links to the github repos of these packages at the bottom of this page.<br>
+										I also needed to use an older version of Orocos Kinematics Dynamics library so that the balance controller would run without issues. 
+										
 
 									</p>
                                     <h2>Design</h2>
-                                    <p> Using the Onshape CAD software, I designed new feet that would replace the original feet on the OP3.
-										The new feet are designed with a passive toe linkage, completing the 4th linkage that humans have for bipedal locomotion. The footprint dimentions of the feet were made similar to the original flat feet that come with the Robotis-op3 kit. Using the roll-over-shape formula of r = l/3, with r as the roll-over-shape radius and l as the leg length, The template of the roll over shape can be made and adjusted for a variety of angles. The toe linkage hinge is positioned for optimal force distrobution at a 25 degree angle. 
+                                    <p> Using the Onshape CAD software, I designed new feet to replace the original ones on the OP3.
+										The new feet are designed with a passive toe linkage and a rigid roll-over-shape, completing the 4th linkage humans have for bipedal locomotion. The footprint dimensions of the feet were similar to the original flat feet that come with the Robotis-op3 kit. 
+										Using the roll-over-shape formula of r = l/3, with r as the roll-over-shape radius and l as the leg length, The template of the roll-over-shape can be used to make feet with a variety of angles. 
+										</p>
+										<div class="box alt">
+											<div class="row gtr-50 gtr-uniform">
+												<div class="col-6"><span class="image fit"><img src="assets/Robotoe/onshaperos.png" alt="" /></span></div>
+												<div class="col-6"><span class="image fit"><img src="assets/Robotoe/onshapetfoot.png" alt="" /></span></div>
+												
+											</div>
+										</div>
+										
+										<p>I created the roll-over-shape foot with a toe angle of 30 degrees.
+										The toe linkage hinge for the T-foot was positioned for optimal force distribution at a 40 degree angle. 
 
 										 </p>
+										 
 									<h2>Walking Gaits</h2>
-									<p>The Robotis packages come with a default walking gait designed specifically for robotis robots including the OP3. There are adjustable parameters that you can manipulate with a gui demo in the software. The default walking gait uses ZMP (zero moment point) for balance and locomotion. The walking parameters were limited to only use flat footed walking as the OP3 was only inteded to have flat feet, meaning that even with toed feet attached, the robot would be unable to utilize its mechanics.
-										The OP3 ros packages do not have the ability to easily add new walking controllers or new gaits. In order to utilize and test the toe mechanism, I needed to create my own walking gait from scratch using hardcoded joint states. 
-										Using the human gait as reference, I created a new gait cycle for the OP3 that included stance/swing phases, single and double support phases, and the 8 stages of the human gait cycle: Heel-strike, loading response, mid-stance, terminal stance, pre-swing, toe-off, mid-swing, and terminal swing. The toe-off and knee straightening movement is used to propel the hips forward at the end of the double support phase. 
-										The new gait I created nicely emulated the human gait and relies on the utilization of the toe mechanism. The hardcoded nature of the toed, human-like gait led to balance issues. Without the proper development of a balanced human walking gait, the system would not be able to consistantly function without falling to either side. 
-										To keep the human-like gait stable during locomotion without a proper walking controller, the testrig/"baby walker" was adjusted to support the robot on either side to prevent the robot from falling and/or veering off course. The walker did not directly support the robot's weight or influence any forward movement. The robot's feet were supporting all of its weight and moved the robot forward. It only helped to stabilize the robot from side to side to prevent the robot from falling over.
+									<p>The Robotis packages come with a default walking gait designed specifically for robotis robots, including the OP3. In addition, there are adjustable parameters that you can manipulate with a gui demo in the software. The default walking gait uses ZMP (zero moment point) for balance and locomotion. The walking parameters were limited to only use flat-footed walking as the OP3 was only intended to have flat feet, meaning that even with toed feet attached, the robot would be unable to utilize its mechanics.
+										The OP3 ROS packages cannot add new walking controllers or new gaits easily. Therefore, in order to utilize and test the toe mechanism, I needed to create my own walking gait from scratch using hardcoded joint states. 
+										Using the human gait as a reference, I created a new gait cycle for the OP3 that included stance/swing phases, single and double support phases, and the eight stages of the human gait cycle: Heel-strike, loading response, mid-stance, terminal stance, pre-swing, toe-off, mid-swing, and terminal swing. The toe-off and knee straightening movement is used to propel the hips forward at the end of the double support phase. 
+									</p>
+
+									<span class="image fit"><img src="assets/Robotoe/gait_comparison.JPG" alt="" /></span>
+										
+									
+									<p>
+										The new gait I created nicely emulated the human gait and relies on the utilization of the toe mechanism. However, the hard coded nature of the toed, human-like gait led to balance issues. Without the proper development of a balanced human walking gait, the system would not be able to consistently function without falling to either side. 
+										To keep the human-like gait stable during locomotion without a proper walking controller, the testrig ("baby walker") was adjusted to support the robot on either side to prevent the robot from falling and/or veering off course. The walker did not directly support the robot's weight or influence forward movement. The robot's feet supported all of its weight and it forward. It only helped stabilize the robot from side to side to prevent it from falling over.
 									</p>
 									
+									
 									<h2>Metrics</h2>
-									<p>To compare the efficiency between flat footed walking and toed walking on the robot, several different metrics should be established: Step length, walking speed, potential energy efficiency, kinetic energy efficiency, and power consumption. 
-										Originally, power consumption was going to be collected through directly measuring the current being supplied to each motor. This would be done using the dynamixel 2.0 protocol to read the current from each motor in realtime as the robot functions. 
-										Unfortunatly, the read/write protocol and the robotis ros packages did not leave any ability to simultaniously read currents and operate the robot. I wrote ros packages that attempted to read the motor currents in the background, however the robot would freeze up and loose control due to the way the robotis software syncronized its read/write protocols.
-										Moving forward, tracking kinetic and potential energy efficencies was the only way to gather energy metrics for the project. 
-										
-										The experiment would collect the amount of potential energy and kinetic energy expended durring the 2.5 meter walk as well as the number of steps and time it took to complete the walk. The results would compare the measurments between walking with toes and the default control case with flat footed walking.
+									<p>To compare the efficiency between flat-footed walking and toed walking on the robot, several metrics should be established: Walking speed, number of steps taken, potential energy efficiency, kinetic energy efficiency, and power consumption. 
+										Initially, power consumption was going to be collected by directly measuring the current being supplied to each motor. This would be done using the dynamixel 2.0 protocol to read the current from each motor in real time as the robot functions. 
+										Unfortunately, the read/write protocol and the robotis ROS packages did not leave any ability to simultaneously read currents and operate the robot with its predefined functions. I wrote ROS packages that attempted to read the motor currents in the background, however the robot would freeze up and loose control due to the way the robotis software syncronized its read/write protocols.
+										Moving forward, tracking kinetic and potential energy efficiencies was the only way to gather energy metrics for the project. 
+										<br>										
+										The experiment would collect the amount of potential and kinetic energy expended during the 2.5-meter walk as well as the number of steps and time it took to complete the walk. The results would compare the measurments between walking with toes and the default control case with flat-footed walking.
 									</p>
 									
 										<h2>Testing setup</h2>
-									<p>To track the potential and kinetic energies, the realtime location of the robot's enter of mass needed to be tracked and recorded. This was done using an intel realsense camera and apriltags attached to the robot. An OP3 "baby walker" was made to mount the cameras, april tags, and catch the robot from falling to prevent damage to the robot.</p>
+									<p>To track the potential and kinetic energies, the real time location of the robot's enter of mass needed to be tracked and recorded. This was done using an intel realsense camera and apriltags attached to the robot. An OP3 "baby walker" was made to mount the cameras, apriltags, and catch the robot from falling to prevent damage to the robot.</p>
         
                                     <h3>Photos of testing setup</h3>
-									<p>The realsense camera is mounted in front of the robot to record the positions of 2 apriltags. One april tag located on the center of mass of the robot, and the other attached to the testing rig structure as a reference position. This setup is able to track the x and y position of the robot in real time. 
-										A experimental trial consisted of a 2.5 meter walk, using the "baby walker" to track the center of mass location of the robot, along with the time it took to complete the walk. 
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6"><span class="image fit"><img src="assets/Robotoe/test_rig.jpg" alt="" /></span></div>
+											<div class="col-6"><span class="image fit"><img src="assets/Robotoe/op3_tfoot_rviz.png" alt="" /></span></div>
+											
+										</div>
+									</div>
+									<p>The realsense camera is mounted in front of the robot to record the positions of 2 apriltags. One apriltag is located on the center of mass of the robot, and the other is attached to the testing rig structure as a reference position. This setup can track the robot's x and y position in real time. 
+										An experimental trial consisted of a 2.5-meter walk, using the "baby walker" to track the center of mass location of the robot, along with the time it took to complete the walk. 
 									</p>
 
+									<h2>Testing Parameters</h2>
+									
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6"><p>There were several different feet configurations and gait configurations tested in this experiment. 
+												<br>
+												The variety of feet include: 
+												<br>
+											Default op3 flat foot<br>
+											
+											Default op3 flat foot with grip pads<br>
+											
+											T-foot (Toe foot)<br>
+											
+											T-foot with grip pad<br>
+											
+											ROS foot (roll-over-shape)<br>
+											
+											ROS foot with grip pad<br></p></div>
+											<div class="col-6"><span class="image fit"><img src="assets/Robotoe/rosfoot.gif" alt="" /></span>
+											<span class="image fit"><img src="assets/Robotoe/sideways_tfoot.gif" alt="" /></span></div>
+											
+										</div>
+									</div>
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6"><p>
+												The varienty of Gaits tested include:<br>
+												
+												Default op3 walking<br>
+												
+												Tuned/improved op3 walking<br>
+												
+												Davin's Humanoid walking gait
+												<br>
+												
+											
+												The control cases use the default op3 walking gait and improved op3 walking gait using the default op3 flat foot.  </p>
+											</div>
+											<div class="col-6"><span class="image fit"><img src="assets/Robotoe/flat_flat.gif" alt="" /></span></div>
+											
+										</div>
+									</div>
+									
 									<h2>Results</h2>
-									<p>The results of the experiment show a few key differences. First, the step length of the toed walking gait is significantly larger than the flat footed walking gait. 
-										The step length difference also contributes to the amount of steps taken and the amount of time needed to walk 2.5 meters. The Human-like gait took less time to walk 2.5 meters and needed less steps to do so in every trial.
-										The displacement in the x (horizontal) direction is significantly higher in the flat footed gait than the human-like gait. This side to side swinging is used to keep the center of mass of the robot over the support foot, and would alternate as each step is taken. 
-										The x displacement is factored into the kinetic energy expenditure and shows that the flat footed walking gait uses more energy moving its center of mass from left to right than its human gait counterpart.
-										The human-like gait has less side to side movement because the center of mass is not always stable, and falls forward in the swing phase to be caught by the heel-strike. This is one of the defining characterisitcs of the human gait.
-										
-										Another characteristic I was focused on was the hip height throughout the gait cycles. I was expecting to see more fluctuation in the hip height during the human-like gait, however the opposite was the case. 
-										From the y-displacement data, the potential energy conservation was more efficent in the flat-footed gait. This is likely due to the flat-footed gait keeping knees bent and the hips level at all times, reducing the hip height movement and keeping the system as stable as possible during locomotion. 
+									<span class="image fit"><img src="assets/Robotoe/op3_results.JPG" alt="" /></span>
 
+									<p>The results of the experiment show a few key differences.  
+										The control default OP3 walking gait performed the worst in all metrics versus any other test case. This led to using the improved op3 flat-footed gait as the primary control case for gait comparison.
+										<br>
+										The displacement in the x (horizontal) direction is significantly higher in the default OP3 gait than the human-like gait but is less significant in the improved op3 flat-footed gait. This side-to-side swinging is used to keep the center of mass of the robot over the support foot and would alternate as each step is taken.
+										The x displacement is factored into the kinetic energy expenditure and shows that the flat-footed walking gait uses energy to move its center of mass from left to right.
+										The human-like gait has less consistent side-to-side movement because the center of mass is not always stable and falls forward in the swing phase to be caught by the heel strike. This is one of the defining characteristics of the biphasic forward propulsion of the center of gravity of the human body.
+										</p>
+										<div class="box alt">
+											<div class="row gtr-50 gtr-uniform">
+												<div class="col-6"><span class="image fit"><img src="assets/Robotoe/x-displacement" alt="" /></span></div>
+												<div class="col-6"><span class="image fit"><img src="assets/Robotoe/x-displacement" alt="" /></span></div>
+												
+											</div>
+										</div>
+										
+									<p>
+									
+										Another characteristic I was focused on was hip height throughout the gait cycles. I was expecting to see more fluctuation in the hip height during the human-like gait however, the opposite was the case. 
+										From the y-displacement data, the potential energy conservation was more efficient in the flat-footed gait. This is likely due to the flat-footed gait keeping knees bent and the hips level at all times, reducing the hip height movement, and maintaining the system as stable as possible during locomotion. 
+										This led to the flat improved op3 gait having the greatest efficiency, least variance, and smallest distribution in potential energy conservation.
+										</p>
+										<div class="box alt">
+											<div class="row gtr-50 gtr-uniform">
+												<div class="col-6"><span class="image fit"><img src="assets/Robotoe/y-displacement" alt="" /></span></div>
+												<div class="col-6"><span class="image fit"><img src="assets/Robotoe/y-displacement" alt="" /></span></div>
+												
+											</div>
+										</div>
+
+										<p>
+										The step length of the toed walking gait is significantly larger than the flat-footed walking gait as shown by the steps required to reach 2.5 meters. The human-like gait took an average of 11.6 steps to travel 2.5 meters, whereas the improved flat-footed gait took an average of 40.6 steps to travel 2.5 meters.
 									  </p>
+									  <div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6"><span class="image fit"><img src="assets/Robotoe/flat_flat.gif" alt="" /></span></div>
+											<div class="col-6"><span class="image fit"><img src="assets/Robotoe/flatfootDgait.gif" alt="" /></span></div>
+											
+										</div>
+									</div>
+
 
 									  <h2>conclusion</h2>
 									  <p>
-										This experiment has shows that there is benefit in the utilization of toes in bipedal robots for its energy efficiency and locomotion speed in comparison to the standard flat footed walking most bipedal robots adopt. The issues with implimenting toes on robot bipeds involve the additional degree of freedom increasing the complexity of the system, requiring a more complex walking controller to keep the robot stable.
+										The main hypothesis made for toed feet and human-like gaits for bipedal walking were only partially supported by the data gathered. The improved flat footed gait with flat feet showed to be the best performing and more consistent in a general. There is shown to be high consistency in the data for the T-foot with human-like gait in energy efficiency. This is promising and has the potential to show improvements in the other metrics if a more tuned human-like gait were to be developed. 
+										This experiment has shown that there is possible benefit in the utilization of toes in bipedal robots for its potential improvements in energy efficiency and locomotion speed in comparison to the standard flat-footed walking most bipedal robots use. 
+										The issues with implementing toes on robot bipeds involve the additional degree of freedom increases the system's complexity, requiring a more complex walking controller to keep the robot stable.
 										As development of toed robots and more human-like gait patterns increases, more benefits in efficiency and effectiveness may emerge.
-										Additional benefits might include human-like asthetic in the appearance of the walking gait.
+										Additional benefits might include human-like aesthetics in the appearance of the walking gait.
 									  </p>
 
+									  <h2>Future experiment improvements</h2>
+									  <p>To improve the detail of the experiment and conclusions, some future changes can be made. 
+										First, being able to accurately monitor the robot's power consumption while walking would give definitive insight into energy efficiency. 
+										Having a more extensive variety of feet, including changing the angles of the roll-over-shape feet and having a variety of different spring tensions for the toed feet, would give more detail for how the designs affect the way the robot walks.
+										The most challenging improvement would involve creating an open-loop human-like walking control algorithm to keep the robot balanced while walking. However, this would be a whole project on its own due to the complex nature of humanoid walking and the current state and methods for bipedal walking control.
+										 </p>
 
-                                    <span class="image fit"><img src="assets/IHMC/test_setup.jpg" alt="" /></span>
-                    
+									  <h2>GITHUB Repos</h2>
+									  <p>Here is a link to the op3 testbed ros package I made to collect and store the experiment data.</p>
+									  <li><a href="https://github.com/dlandry97/OP3_walking_testbed">Testbed</a></li>
+									  <p>Here are the ROS packages I forked and changed to update the robotis OP3 to ROS Noetic</p>
+									  <li><a href="https://github.com/dlandry97/ROBOTIS-OP3_noetic_1.0">ROBOTIS-OP3</a></li>
+									  <li><a href="https://github.com/dlandry97/ROBOTIS-OP3-Tools_Noetic_1.0">ROBOTIS-OP3-Tools</a></li>
+									  <li><a href="https://github.com/dlandry97/ROBOTIS-OP3-Demo_Noetic_1.0">ROBOTIS-OP3-Demo</a></li>
+									  <li><a href="https://github.com/dlandry97/ROBOTIS-OP3-Common_Noetic_1.0">ROBOTIS-OP3-Common</a></li>
+									  <li><a href="https://github.com/dlandry97/ROBOTIS-Framework_Collection">ROBOTIS-Framework</a></li>
+									  <li><a href="https://github.com/dlandry97/face_detection_CV4">Face Detection</a></li>
+									  <li><a href="https://github.com/dlandry97/humanoid_navigation_noetic_op3">Humanoid Navigation</a></li>
+
+
+
+
+
 							
 
 							</section>
@@ -125,13 +253,13 @@
 					</div>
 
 				<!-- Footer -->
-				<footer id="footer">
+				<!-- <footer id="footer">
 					<section>
 						<header id="header">
 							<a href="https://github.com/ME495-EmbeddedSystems/final-project-vestibular" class="logo">View on Github</a>
 						</header>
 					</section>
-				</footer>
+				</footer> -->
                
 
 				<!-- Copyright -->
