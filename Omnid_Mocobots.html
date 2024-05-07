@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Davin Landry -Omnid Mocobots</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Davin Landry</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li><a href="Resume.html">Resume</a></li>
+							<li><a href="About.html">About Me</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/davinlandry/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/dlandry97" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Omnids<br />
+									MoCoBots</h1>
+								</header>
+								<span class="image fit"><img src="assets/Omnids/MARS24_0168_BR1_0232.JPG" alt="" /></span>
+
+								<!-- Text stuff -->
+									<!-- <h2>Text</h2>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>.
+									Finally, this is a <a href="#">link</a>.</p> -->
+									<h2>Omnid overview</h2>
+                                    <p>The Omnids are Mobile Collaborative Robots built for collaborative lifting to assist a human operator in lifting and manipulating large, heavy, or otherwise cumbersome objects. When in operation, the robots will "float" the object by canceling gravitational forces, making the object feel weightless and easily manipulatable in 6 degrees of freedom. This robot started as an undergraduate capstone project and evolved over time into a research platform under Kevin Lynch at the Northwestern Center for Robotics and Biosystems (CRB). </p>
+                                    <iframe width="628" height="353" src="https://www.youtube.com/embed/qRwy5Pap2jA" title="Omnid mocobots at MARS 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    
+                                    <h2>Goals</h2>
+
+                                    <p>My goals for these robots were to implement battery monitoring, wireless e-stop buttons, more functional joint limiters, rework and shield the PCBs, and overall prepare the robots for long rigorous demos. These goals were set in preparation for attending the MARS 2024 Conference hosted by Jeff Bezos. For this iteration of the project, I was lead Mechanical & Electrical Engineer and Co-Lead of a team of 10-15 undergraduate and graduate students at Northwestern.  </p>
+									
+                                   
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            <div class="col-6"><span class="image fit"><img src="assets/Omnids/MARS24_1255_LA2_3473.JPG" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/Omnids/MARSrevised.jpg" alt="" /></span></div>
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/Quix/Mark_prototype2.jpg" alt="" /></span></div> -->
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/Quix/quix walk.gif" alt="" /></span></div> -->
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
+                                        </div>
+                                    </div>
+
+
+                                    <!-- <h2></h2>
+                                    <p>More
+                                    </p> -->
+                                    <!-- <span class="image fit"><img src="assets/Quix/gait_pattern.png" alt="" /> -->
+                                    <!-- <span class="image fit"><img src="assets/Quix/haptic_pattern.png" alt="" /> -->
+                                        <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            <div class="col-6"><p>
+                                                Words here 
+                                            </p></div>
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/Quix/haptic_pattern.png" alt="" /></span></div> -->
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
+                                        </div>
+                                    </div>
+                                    <!-- <p>
+                                        After discussion and feedback from Mark, having distinct perception/indication of the specified gait landmarks is significant for improving the conjunction of perception and reaction. The landmarks were specifically selected because they are high activity events. Toe-off and heel-strike have high impact on the inertia and movement of the EXO, therefore requiring much more preparation and reaction from the pilot to maintain control and balance of the EXO. Using the haptic feedback to perceive and anticipate these landmarks would greatly increase the pilots ability to adapt and control walking stability without requiring visual confirmation of what their legs are doing. 
+                                    </p> -->
+                                    <!-- <span class="image fit"><img src="assets/Quix/gait_pattern.png" alt="" /> -->
+                                    <!-- <p>
+                                        Words Here
+                                    </p> -->
+                                    
+
+                                    <h2>Robot Breakdown</h2>
+                                    <p>There are 2 main functional systems to the Omnids, the omnidirectional mobile base and the delta arm. The mobile base uses macanum wheels to drive omnidirectionally on a flat and level surface. The delta arm consists of three arms connected by universal joints, and parallelagrams are utilized in the arms to maintain orientation at the end effector. The Omnid delta arm is driven by Series Elastic actuators (SEAs), to add compliance and force sensing. Attached to the end effector is a 3 DOF gimbal equipped with encoders for object pose sensing.
+                                        When deployed with two other Omnid robots, you may mount a large object onto the Omnid's end-effectors. The Delta arms will work to cancel the gravitational forces to "float" the object, enabling easy manipulation of the object in 6 DOF. The object floats weightlessly while conserving its momentum and inertia. The delta arm senses and calibrates to the object's weight and will apply the appropriate amount of force upwards to cancel gravitational forces, all while allowing external forces, such as a push from the operator, to move the delta arms in 3 DOF. The control objective of the mobile base is to keep the base under the center of the delta arm end-effector, allowing limitless workspace across a flat surface for the robots to travel on.</p>
+
+                                    <!-- <span class="image fit"><img src="assets/Quix/prototype1.jpg" alt="" />
+                                    <span class="image fit"><img src="assets/Quix/prototype3.jpg" alt="" /> -->
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/Omnids/Mars_Demo.gif" alt="" /></span></div> -->
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/Omnids/Lin_omnid.gif" alt="" /></span></div> -->
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
+                                        </div>
+                                    </div>
+                                        
+                                   
+
+                                    <h2>PCBs</h2>
+
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            <div class="col-6"><p>
+                                                One of my main rresponsibilities was as the Lead Electrical Engineer, where I designed and manufactured several printed circuit boards for the robot. I designed, prototyped, and implimented the Omnid Main Board. The board's purpose is to handle the analog E-Stop logic, integrate wireless E-stop buttons, monitor battery voltage, and communicate between the onboard computer and the other boards.
+                                                I also guided the redesign of Joint Controller boards with the goal of removing the bulky Tiva Launchpad and replacing them with MCU chips to reduce footprint size and exposure. I also added some more functions to the JC boards, including more logic for joint limit switches and an E-Stop recovery circuit. 
+                                            </p></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/Omnids/PCBs.jpg" alt="" /></span></div>
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    <h2>Robustness</h2>
+
+
+                                    <p>
+                                        Bringing the robots to a robust state called for the addition of metal boxes for the previously exposed PCBs. This was to act as a Faraday cage for the PCBs, which previously were too exposed to external static sources, causing the PCBs to reset.  
+                                    </p>
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            
+                                            <div class="col-6"><span class="image fit"><img src="assets/Omnids/top_old.jpg" alt="" /></span></div> 
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/Omnids/minions.jpg" alt="" /></span></div>  -->
+                                            <div class="col-6"><span class="image fit"><img src="assets/Omnids/Omnid_top.jpg" alt=""/></span></div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        I lead the manufacturing team by example to solder, splice, crimp, and assemble the boxes and their panel-mounted connections.
+                                    </p>
+
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            
+                                            <div class="col-6"><span class="image fit"><img src="assets/Omnids/minions.jpg" alt="" /></span></div> 
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/Omnids/minions.jpg" alt="" /></span></div>  -->
+                                            <div class="col-6"><span class="image fit"><img src="assets/Omnids/E_boxesr.jpg" alt=""/></span></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            
+                                            <div ><span class="image fit"><img src="assets/Omnids/team-photo.jpg" alt="" /></span></div>
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
+                                        </div>
+                                    </div>
+
+                                    <p>Thank you to Kevin Lynch and Matthew Elwin for allowing me and Lin Liu to co-lead this project through this fast-paced and exhilarating phase of this project. Also, special thanks to the hard-working students of Northwestern University who helped to get the Omnids to the finish line.  </p>
+
+									
+
+									<h4>Documentation of this project is on the github page below.</h4>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<header id="header">
+							<a href="https://github.com/omnid" class="logo">View on Github</a>
+						</header>
+					</section>
+				</footer>
+
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Davin Landry</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
