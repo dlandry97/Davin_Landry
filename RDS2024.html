@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<!-- Declares the document type as HTML5 -->
+<!--
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <!-- Sets the title of the webpage displayed on the browser tab -->
+        <title>Davin Landry - RDS 2024</title>
+        <!-- Specifies the character encoding for the document -->
+        <meta charset="utf-8" />
+        <!-- Sets the viewport properties for responsive design -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <!-- Links to the main stylesheet for page styling -->
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <!-- Provides fallback styling for users with JavaScript disabled -->
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper for the entire content of the page -->
+        <div id="wrapper">
+
+            <!-- Header section -->
+            <header id="header">
+                <!-- Link styled as a logo, redirects to the homepage -->
+                <a href="index.html" class="logo">Davin Landry</a>
+            </header>
+
+            <!-- Navigation bar -->
+            <nav id="nav">
+                <ul class="links">
+                    <!-- Navigation links to different pages of the site -->
+                    <li><a href="index.html">Projects</a></li>
+                    <li><a href="Resume.html">Resume</a></li>
+                    <li><a href="About.html">About Me</a></li>
+                </ul>
+                <ul class="icons">
+                    <!-- Social media icons with links -->
+                    <li><a href="https://www.linkedin.com/in/davinlandry/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="https://github.com/dlandry97" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+            </nav>
+
+            <!-- Main content area -->
+            <div id="main">
+
+                <!-- Blog post or project information section -->
+                <section class="post">
+                    <!-- Main header of the section -->
+                    <header class="major">
+                        <!-- Heading with line break -->
+                        <h1>RDS 2024<br />Robot Finger + Thumb with Wearable Haptic Interface</h1>
+                    </header>
+                    <!-- Image with fit styling -->
+                    <span class="image fit"><img src="assets/RDS2024/HapticFT.jpg" alt="" /></span>
+
+                    <!-- Paragraph text providing an overview of the project -->
+                    <h2>Robot Design Studio Overview</h2>
+                    <p>The overarching goal of Robot Design Studio (RDS) is to learn how to design, build, operate, characterize, and refine a high-performance robotic system. The course is a two-quarter capstone project course at Northwestern University, co-instructed by Dr. J. Edward Colgate and myself for the 2024 Winter and Spring school quarters. For RDS 2024, the goal was to develop a robotic gripper and haptic interface for usage in hazardous laboratory experiments, such as with radiation hotbox environments for chemistry research. The desired capabilities are the ability to pinch, twist, and hold lab objects such as test tubes. We gave the design parameters of 2 motors and 3 degrees of freedom per finger with at least one synergistic or passive joint. </p>
+                    
+                    <h2>Team Formation</h2>
+                    <p>The class consisted of 20 senior-level undergraduate and graduate engineering students who were split into a hybrid team structure devised by myself. Each student would be a member of two types of teams: a primary "project team" and secondary "specialization committee". There are four project teams: Robot Thumb, Robot Finger, Haptic Thumb, Haptic Finger, and four specialization committees: Mechanical/Manufacturing, Electrical, Software, and System Integration. Each project team would require a member from each committee and vice versa. This team structure was designed to create a more cohesive and connected collective team towards the final goals of the project. This also provides a support network for interteam collaboration and coordination.</p>
+                    
+                    <!-- Embedded YouTube video -->
+                    <!-- <iframe width="628" height="353" src="https://www.youtube.com/embed/qRwy5Pap2jA" title="Omnid mocobots at MARS 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                    
+                    <div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-6"><h2>Design</h2> <p>The teams were prompted to rapidly iterate on their mechanical designs in conjunction with biweekly meetings with the instruction staff for feedback and guidance. The motor remotization and transmission were designed to be cable-driven systems using pulleys and tendons to transmit the torques to each link of the fingers. The teams were instructed to keep in mind the mutual mounting capabilities of their devices so that they may design their fingers separately, but then bring the designs together at the end for a useful and intuitive workspace and range of motion. The most tedious element of the system, as reported by the students, was the tendon routing and tensioning for low backlash and high stiffness actuation.</p>
+                            </div>
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/specs.png" alt="" /></span></div>
+                        </div>
+                    </div>
+                    <h2>Robot Gripper</h2>
+                    <!-- Grid layout for images -->
+                    <div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/rob_fingerCAD.png" alt="" /></span></div>
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/Rfinger.jpg" alt="" /></span></div>
+                        </div>
+                    </div>
+
+                    <!-- Robot Breakdown section -->
+                    <p>The Gripper consists of a robot finger and thumb. The degrees of freedom for the finger included the curl action of the human index finger, where each joint has parallel axes. The joint lengths were designed after generic human hand model dimensions, with motors that provided an adequate amount of torque and speed for lifting and manipulating small laboratory objects.</p>
+                    
+                    <!-- Additional images of the robot in action -->
+                    <div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/thumbCAD.png" alt="" /></span></div>
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/Rthumb.png" alt="" /></span></div>
+                        </div>
+                    </div>
+
+                    <p>The Robot thumb included degrees of freedom for the curling motion of the thumb as well as what students called the "wag" (abduction/adduction) motion. </p>
+
+                    <h2>Haptic Device</h2>
+                    <p>The Haptic device is an exoskeletal finger and thumb apparatus that has the same degrees of freedom (DOF) and range of motion (ROM) parameters as the Robot Gripper system. The haptic device functions as a controller, DOF constraint, and force feedback mechanism. It has similar motor specifications so that the robot and haptic systems may be more similar in the forces you can feel and impart on objects.</p>
+
+                    <div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-4"><span class="image fit"><img src="assets/RDS2024/hapticCAD.png" alt="" /></span></div>
+                            <div class="col-4"><span class="image fit"><img src="assets/RDS2024/HapticFT.jpg" alt="" /></span></div>
+                            <div class="col-4"><span class="image fit"><img src="assets/RDS2024/hfroute.png" alt="" /></span></div>
+                        </div>
+                    </div>
+
+                    <p>The haptic system is linked to the robot gripper using bilateral control. The only sensors on the entire system include Hall effect encoders on the motor outputs and an absolute encoder on the haptic thumb curl joint. The forces are sensed through the motors.</p>
+                    <p>The selection of the DOFs for the haptic system was chosen for optimal pinching and manipulation actions. The wag motion of the thumb was the product of a design pivot to provide a more intuitive pinching motion. </p>
+
+                    <div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-4"><span class="image fit"><img src="assets/RDS2024/haptic_thumbCAD.png" alt="" /></span></div>
+                            <div class="col-3"><span class="image fit"><img src="assets/RDS2024/thumb_curl.gif" alt="" /></span></div>
+                            <div class="col-4"><span class="image fit"><img src="assets/RDS2024/Thumb_wag.gif" alt="" /></span></div>
+                        </div>
+                    </div>
+
+                    <h2>Cable Drive</h2>
+                    <div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-8"> <p>The cable drive systems used in all of the systems employed thin steel cables that remote the motor torque to each joint. Usually, the joint nearest the motors formed a capstan cable drive mechanism. The students chose to use steel cables with brass crimps for terminations. Tensioning mechanisms were designed to be accessible and adjustable. The iterations on each project usually led to terminating the cable at a vented screw, where the tension would be adjusted by turning a nut or wing-nut to tighten said screw, changing the amount of cable and tension available.</p>
+                            </div>
+                            <div class="col-4"><span class="image fit"><img src="assets/RDS2024/tension.png" alt="" /></span></div>
+                        </div>
+                    </div>
+
+                    <!-- Robustness section -->
+                    <h2>Remotization</h2>
+                    <p>To remote the joints from the motors, the students used cable routing and careful placement of terminations for each cable drive system to get the desired range of motion and transmission for each joint, as well as to minimize joint coupling where possible. Using routing techniques such as routing cables through the center of rotation to remove coupling worked well, even for more complex systems such as the haptic thumb system.</p>
+
+                    <h3>Robot Thumb Routing</h3>
+                    <div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-3"><span class="image fit"><img src="assets/RDS2024/rtrouting1.png" alt="" /></span></div> 
+                            <div class="col-3"><span class="image fit"><img src="assets/RDS2024/rtrouting2.png" alt="" /></span></div> 
+							<div class="col-6"><span class="image fit"><img src="assets/RDS2024/rtrouting3.png" alt="" /></span></div> 
+							
+                        </div>
+                    </div>
+					<div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/rtrouting4.png" alt="" /></span></div> 
+                            <div class="col-4"><span class="image fit"><img src="assets/RDS2024/rtrouting5.png" alt="" /></span></div> 
+							
+                        </div>
+                    </div>
+
+                    <h3>Robot Finger Routing</h3>
+                    <div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-4"><span class="image fit"><img src="assets/RDS2024/rfdim.png" alt="" /></span></div> 
+                            <div class="col-4"><span class="image fit"><img src="assets/RDS2024/rob_fingerCAD.png" alt="" /></span></div> 
+                            <div class="col-4"><span class="image fit"><img src="assets/RDS2024/rfrouting.png" alt="" /></span></div> 
+                        </div>
+                    </div>
+
+                    <h3>Haptic Thumb Routing</h3>
+                    <div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/htrouting1.png" alt="" /></span></div> 
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/htrom.png" alt="" /></span></div> 
+                        </div>
+                    </div>
+
+                    <h3>Haptic Finger Routing</h3>
+                    <div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-4"><span class="image fit"><img src="assets/RDS2024/hfroute.png" alt="" /></span></div> 
+                            <div class="col-4"><span class="image fit"><img src="assets/RDS2024/hfcadclose.png" alt="" /></span></div> 
+                            <div class="col-4"><span class="image fit"><img src="assets/RDS2024/hfclose.png" alt="" /></span></div> 
+                        </div>
+                    </div>
+
+					<h2>Electronic Hardware</h2>
+					<!-- <p>The motors selected to meet the required parameters were the ECX Torque 22XL and the EC 45 Flat Maxon motors. The robot finger used 2 flat motors, the robot thumb used one of each motor, the rest of the systems motors were ECX 22XL motors. Each motor is driven by its own ODrive Pro, trading torque requests and encoder positions with a Teensy 4.1 via CAN. Teensies would communicate to eachother via CAN bus communicating positions, safety info, and heartbeat signals. The overall power architecture is shown in the diagram below. </p> -->
+
+					<div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+							<div class="col-6">	<p>The motors selected to meet the required parameters were the ECX Torque 22XL and the EC 45 Flat Maxon motors. The robot finger used 2 flat motors, the robot thumb used one of each motor, the rest of the systems motors were ECX 22XL motors. Each motor is driven by its own ODrive Pro, trading torque requests and encoder positions with a Teensy 4.1 microcontroller via a controller-area network (CAN). The Teensies would communicate to eachother via CAN bus communicating positions, safety info, and heartbeat signals. The overall power architecture is shown in the diagram below. </p>
+							</div> 
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/power_arch.png" alt="" /></span></div> 
+
+                            
+                        </div>
+                    </div>
+
+					<p>PCBs were designed to handle the intercommunication between the Teensies as well as the power distrobution.</p>
+					<div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/data_board.png" alt="" /></span></div> 
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/power_board.png" alt="" /></span></div> 
+							
+                        </div>
+                    </div>
+
+					<h2>Controls</h2>
+
+					<p>The robot and haptic systems were controlled using bilateral control designed to have the robotic system mirror the haptic system and vice versa. The finger control loop and the thumb control loop are slightly different because the fingers would match end effector positions where the thumbs would match just joint angles. The positions are connected using a virtual spring-damper controller</p>
+
+
+					<div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/finger_control.png" alt="" /></span></div> 
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/thumb_control.png" alt="" /></span></div> 
+							
+                        </div>
+                    </div>
+					<h2>Pipeline</h2>
+					<p>These diagrams show the speeds and location of the system loop.</p>
+					<div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/timing.png" alt="" /></span></div> 
+                            <div class="col-6"><span class="image fit"><img src="assets/RDS2024/sys_control_loop.png" alt="" /></span></div> 
+							
+                        </div>
+                    </div>
+
+					
+
+					<h2>Mapping</h2>
+					<p>Each finger system only communicates with its haptic counterpart. The Finger mapping occurs between the end effector positions. The Thumb mapping occurs between the joint positions because of 3D workspace and kinematic differences between the thumb interfaces.  Below there are workspace diagrams that display in three dimensions a spread of the workspaces for each system and how it compares with its counterparts. The first diagrams show the workspace comparison between the finger and thumb systems, where the other diagrams show the complete workspace of the entire robot system and entire haptic system.</p>
+					
+					<div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-3"><span class="image fit"><img src="assets/RDS2024/finger_workspace.png" alt="" /></span></div> 
+                            <div class="col-3"><span class="image fit"><img src="assets/RDS2024/thumb_workspace.png" alt="" /></span></div> 
+							<div class="col-3"><span class="image fit"><img src="assets/RDS2024/robot_workspace.png" alt="" /></span></div> 
+                            <div class="col-3"><span class="image fit"><img src="assets/RDS2024/haptic_workspace.png" alt="" /></span></div> 
+                        </div>
+                    </div>
+
+                    <h2>Videos</h2>
+                    <p>Comming Soon</p>
+                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/xEbkxiJ-OmE?si=JXB9pkP8XQU52xqO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                    
+                    <p></p>
+
+                    <!-- More images related to robustness -->
+                    <div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                        </div>
+                    </div>
+
+                    <!-- Team photo -->
+                    <div class="box alt">
+                        <div class="row gtr-50 gtr-uniform">
+                        </div>
+                    </div>
+
+                    <!-- Acknowledgements -->
+                    <p>Acknowledgement: Thank you to Dr. Edward Colgate and Northwestern University for allowing me to instruct and direct this course. </p>
+
+                    <!-- Final call to action for GitHub documentation -->
+                    <h4>Documentation of this project is on the GitHub page below.</h4>
+                </section>
+
+            </div>
+
+            <!-- Footer section with GitHub link -->
+            <footer id="footer">
+                <section>
+                    <header id="header">
+                        <a href="https://github.com/NU-RDS-2024" class="logo">View on GitHub</a>
+                    </header>
+                </section>
+            </footer>
