@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Davin Landry -RDS 2023</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Davin Landry</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li><a href="Resume.html">Resume</a></li>
+							<li><a href="About.html">About Me</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/davinlandry/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/dlandry97" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>RDS 2023<br />
+                                        EdWARD: Educational Wrist/Arm for
+                                        Robot Dexterity</h1>
+								</header>
+								<span class="image fit"><img src="assets/RDS2023/logo.png" alt="" /></span>
+
+								<!-- Text stuff -->
+									<!-- <h2>Text</h2>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>.
+									Finally, this is a <a href="#">link</a>.</p> -->
+									<h2>Robot Design Studio Overview</h2>
+                                    <p>The overarching goal of RDS is to learn how to design, build, operate, characterize, and refine a high-performance robotic system. The course is a capstone project course at Northwestern University led by Dr. Ed Colgate and co-instructed by Alex Maklin and myself for the 2023 Winter and Spring school seasons. For RDS 2023, the whole class worked as a single team to develope a humanoid robotic arm and an interface that will allow a user to remotely control the arm.  </p>
+                                    <!-- <iframe width="628" height="353" src="https://www.youtube.com/embed/qRwy5Pap2jA" title="Omnid mocobots at MARS 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            <div class="col-8"><span class="image fit"><img src="assets/RDS2023/arm_alex.png" alt="" /></span></div>
+                                            <div class="col-4"><span class="image fit"><img src="assets/RDS2023/arm_diagram.png" alt="" /></span></div>
+                                        </div>
+                                    </div>
+                                    <h2>Goals</h2>
+
+                                    <p>The primary goal was to create a versatile, backdrivable robotic platform capable of precise interaction tasks, such as manipulation and object handoff, using embedded torque sensing and high-performance control. The system combines mechanical robustness, compact modularity, and real-time control interfaces to serve as a research and educational platform for robotic dexterity.</p>
+                                   
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            <div class="col-12"><span class="image fit"><img src="assets/RDS2023/overview.png" alt="" /></span></div>
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/RDS2023/arm_diagram.png" alt="" /></span></div> -->
+                                        </div>
+                                    </div>
+
+
+                                    
+
+                                    <h2>System Highlights</h2>
+                                    <ul>
+                                        <li><strong>Reach:</strong> 0.7 m effective reach with end effector</li>
+                                        <li><strong>Payload:</strong> 5 kg maximum supported at full extension</li>
+                                        <li><strong>Speed:</strong> Joint velocity up to 3.14 rad/s (limited for safety)</li>
+                                        <li><strong>Resolution:</strong> Torque sensing down to 0.2 Nm using Hall-effect sensors</li>
+                                        <li><strong>Bandwidth:</strong> 100 Hz system-wide update rate using CAN bus</li>
+                                      </ul>
+                                    <!-- <span class="image fit"><img src="assets/Quix/prototype1.jpg" alt="" />
+                                    <span class="image fit"><img src="assets/Quix/prototype3.jpg" alt="" /> -->
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            <div class="col-6"><span class="image fit"><img src="assets/RDS2023/workspace.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/RDS2023/arm_workspace.png" alt="" /></span></div>
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
+                                        </div>
+                                    </div>
+                                        
+                                   
+
+                                    <h2>End Effectors</h2>
+
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            <div class="col-6"><p>
+                                                EdWARD was designed to support both the Shadow Dexterous Hand (20 DOF, 4.3 kg) and the ORCO Hand (4 DOF, 0.47 kg). The lightweight TPU construction of the ORCO Hand allows safer interaction with humans and passive compliance when grasping, while the Shadow Hand enables highly articulated manipulation for research applications. Both are integrated into ROS 2 via URDF and support real-time tracking and control.    
+                                            </p></div>
+                                            <div class="col-3"><span class="image fit"><img src="assets/RDS2023/hand.png" alt="" /></span></div>
+                                            <div class="col-3"><span class="image fit"><img src="assets/RDS2023/index_shadow_dexterous_hand.png" alt="" /></span></div>
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    <h2>Series Elastic Acturators (SEAs)</h2>
+
+
+                                    <p>Core to EdWARD’s design is the use of custom-designed SEAs. These improve safety, allow accurate torque sensing, and protect gearboxes from impact loads. Each SEA consists of a twin-spiral torsion spring laser-cut from Grade 5 titanium, chosen for its high resilience and machinability. Two versions were built:</p>
+                                    <ul>
+                                        <li><strong>Stiff SEA (Shoulder):</strong> 1792 Nm/rad, designed for 100 Nm loads, S.F. ≈ 1.32</li>
+                                        <li><strong>Soft SEA (Elbow/Wrist):</strong> 847 Nm/rad, designed for 50 Nm loads, S.F. ≈ 1.09</li>
+                                    </ul>
+                                    <p>Finite Element Analysis guided the final dimensions, ensuring stiffness targets and stress limits were met. These springs allow bi-directional torque sensing via deflection of embedded magnets tracked by Hall-effect sensors.</p>
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            
+                                            <div class="col-6"><span class="image fit"><img src="assets/RDS2023/sea_labeled.png" alt="" /></span></div> 
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/Omnids/minions.jpg" alt="" /></span></div>  -->
+                                            <div class="col-6"><span class="image fit"><img src="assets/RDS2023/sea_deflection.png" alt=""/></span></div>
+                                        </div>
+                                    </div>
+                                    <h2>Joint Design</h2>  
+
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            
+                                            <div class="col-6"><p>Each joint package is a compact stack-up of motor, SEA, bearing, and sensors. GIM8115 motors were selected for their high torque and integrated planetary gear reduction. Crossed-roller bearings provide 5-DOF constraint while allowing free rotation. Custom clamp sets for the bearing inner and outer races preserve concentricity under load.</p>
+                                                <p>Key sensors include:</p>
+                                                <ul>
+                                                  <li><strong>AksIM-2 Absolute Encoders:</strong> Detect output position with 20-bit resolution</li>
+                                                  <li><strong>DRV5055 Hall Sensors:</strong> Measure SEA deflection with sub-millimeter accuracy</li>
+                                                </ul>
+                                                <p>The result is a fully integrated, low-profile joint capable of withstanding off-axis loads while preserving sensitivity and mechanical robustness.</p></div> 
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/Omnids/minions.jpg" alt="" /></span></div>  -->
+                                            <div class="col-6"><span class="image fit"><img src="assets/RDS2023/joints.png" alt=""/></span>
+                                                <span class="image fit"><img src="assets/RDS2023/encoder.png" alt=""/></span></div>
+                                        </div>
+                                        <div class="col-12"><span class="image fit"><img src="assets/RDS2023/joint_assembly.png" alt=""/></span></div>
+                                    </div>
+
+                                    <h2>Controls & Software Architecture</h2>  
+
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            
+                                            <div class="col-6"><ul>
+                                                <li>Each joint has a Teensy 4.0 microcontroller running custom firmware with PID-based admittance control</li>
+                                                <li>The Central PC (Ubuntu 22.04 + ROS 2) performs inverse dynamics/kinematics and integrates with VR hardware</li>
+                                                <li>CAN Bus (1 Mbps) connects all joints and allows centralized command propagation and feedback</li>
+                                                <li>URDF and visualization in RViz; control scripts allow position commands, torque modes, and simulation</li>
+                                              </ul>
+                                              <p>The software architecture enables plug-and-play extensibility for new end effectors, motion controllers, or sensor feedback systems.</p>
+                                            </div> 
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/Omnids/minions.jpg" alt="" /></span></div>  -->
+                                            <div class="col-6"><span class="image fit"><img src="assets/RDS2023/controls_diagram.png" alt=""/></span></div>
+                                        </div>
+                                    </div>
+                                    <h2>Operation Modes</h2>
+                                    <p>EdWARD supports the following control modes, all accessible via the ROS 2 interface:</p>
+                                    <ol>
+                                        <li><strong>Joint Commands:</strong> Direct control of joint angles for each degree of freedom</li>
+                                        <li><strong>Pose Commands:</strong> Inverse kinematics-based control of the end effector’s 6-DOF pose</li>
+                                        <li><strong>VR Tracking:</strong> Valve Index controller used for real-time pose streaming to robot</li>
+                                    </ol>
+                                    <p>All commands are validated against joint limits and workspace constraints to prevent hardware damage or control instability. The VR-based control mode highlights EdWARD’s potential for intuitive teleoperation and human-in-the-loop experimentation.</p>
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            <div class="col-6"><span class="image fit"><img src="assets/RDS2023/sim.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/RDS2023/vr.png" alt="" /></span></div>
+                                        </div>
+                                    </div>
+
+                                    <h2>Fabrication & Testing</h2>  
+
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            
+                                            <div class="col-6"><p>SEA elements were laser-cut from Grade 5 Titanium via SendCutSend, then reamed and tapped to spec using conversational milling. Joint modules were assembled with careful attention to concentricity and preload. Bench testing used moment arms and dial indicators to verify SEA stiffness, revealing high agreement for soft SEAs and acceptable deviation (~17.5%) for stiff SEAs due to laser tolerance drift.</p></div> 
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/Omnids/minions.jpg" alt="" /></span></div>  -->
+                                            <div class="col-6"><span class="image fit"><img src="assets/RDS2023/sea_fab.png" alt=""/></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            <div class="col-6"><span class="image fit"><img src="assets/RDS2023/sea_test.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/RDS2023/fab.png" alt="" /></span></div>
+                                        </div>
+                                    </div>
+
+                                    <h2>Lessons Learned</h2>  
+
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            
+                                            <div class="col-8"><ul>
+                                                <li><strong>Material and geometry selection:</strong> Directly influence spring performance, safety factor, and sensing range</li>
+                                                <li><strong>Encoder alignment:</strong> Tolerances below 0.2 mm are critical to prevent signal loss in AksIM-2 and Hall sensors</li>
+                                                <li><strong>Modularity:</strong> Reusable joint modules simplify fabrication and maintenance</li>
+                                                <li><strong>Control validation:</strong> Simulation in RViz + real CAN bus testing ensured safety before live commands</li>
+                                                <li><strong>Connector Management:</strong> Use unique connectors for each electrical domain to ensure system isolation, repeatability, and minimize mis-placed connections</li>
+                                                <li><strong>Rapid Iteration:</strong> Rapid iteration and prototyping were essential to maintaining momentum, enabling continuous improvement, and fostering hands-on learning throughout the project </li>
+                                            </ul></div> 
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/Omnids/minions.jpg" alt="" /></span></div>  -->
+                                            <div class="col-4"><span class="image fit"><img src="assets/RDS2023/assembled.png" alt=""/></span></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="box alt">
+                                        <div class="row gtr-50 gtr-uniform">
+                                            
+                                            <div class="col-12"><span class="image fit"><img src="assets/RDS2023/group_labeled.png" alt="" /></span></div>
+                                            <!-- <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA3.png" alt="" /></span></div>
+                                            <div class="col-6"><span class="image fit"><img src="assets/IHMC/FEA4.png" alt="" /></span></div> -->
+                                        </div>
+                                    </div>
+
+                                    <p>Special thanks to Dr. Ed Colgate, Alex Makhlin, and the hardworking students of the 2023 Robot Design Studio class.</p>
+
+									
+
+									<h4>Documentation of this project is on the github page below.</h4>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<header id="header">
+							<a href="https://github.com/NU-RDS-2023" class="logo">View on Github</a>
+						</header>
+					</section>
+				</footer>
+
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Davin Landry</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
